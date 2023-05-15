@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+
+    --very-dark-blue-main-bg: hsl(217, 54%, 11%);
+    --very-dark-blue-card-bg: hsl(216, 50%, 16%);
+    --very-dark-blue-line: hsl(215, 32%, 27%);
+    --White: hsl(0, 0%, 100%);
+
+}
+
+body {
+    font-size: 18px;
+    font-family: 'Outfit';
+    background: var(--very-dark-blue-main-bg);
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+.card {
+    background: var(--very-dark-blue-card-bg);
+    width: 85%;
+    height: 545px;
+    max-width: 350px;
+    max-height: 590px;
+    border-radius: 20px;
+    padding: 22px 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    height: 50%;
+}
+
+.image {
+    background: url('./images/image-equilibrium.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+.image::before {
+    content: url('./images/icon-view.svg');
+    width: 100%;
+    height: 100%;
+    background: var(--cyan);
+    opacity: 0;
+    position: absolute;
+    transition: opacity .5s;
+    display: grid;
+    place-content: center;
+}
+
+.image:hover::before {
+    opacity: .6;
+}
+
+.texts__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+
+.paragraph {
+    color: var(--soft-blue);
+    font-weight: 300;
+}
+
+.texts__container h2 a {
+    color: var(--White);
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.texts__container h2 a:hover {
+    color: var(--cyan);
+}
+
+.details__container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.details__container > div {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    margin-right: 5px;
+}
+
+.left span {
+    color: var(--cyan);
+}
+
+.right span {
+    color: var(--soft-blue);
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid var(--very-dark-blue-line);
+    padding-top: 12px;
+}
+
+.footer .avatar {
+    width: 32px;
+    border: 1px solid var(--White);
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.footer p a {
+    color: var(--White);
+    font-weight: 400;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.footer p a:hover {
+    color: var(--cyan);
+}
